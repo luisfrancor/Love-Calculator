@@ -1,22 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="HelveticaNeue.ttc">
-            <string>HelveticaNeue-BoldItalic</string>
-        </array>
-        <array key="Noteworthy.ttc">
-            <string>Noteworthy-Light</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -27,77 +19,92 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Love Calculator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gT0-nm-Pbk">
-                                <rect key="frame" x="54.5" y="20" width="266.5" height="74"/>
+                                <rect key="frame" x="54" y="40" width="267" height="74"/>
                                 <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="46"/>
                                 <color key="textColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="yPm-QJ-oOQ">
-                                <rect key="frame" x="0.0" y="148" width="375" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="26e-XQ-WTe">
+                                <rect key="frame" x="10" y="234" width="355" height="36"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                <state key="normal" title="Is it Love? 💙"/>
+                                <connections>
+                                    <action selector="loveCalculatorButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QGR-tv-gmO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jvT-hJ-Uax">
+                                <rect key="frame" x="10" y="547" width="355" height="30"/>
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="resetPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2bO-uE-CxV"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The answer is ..." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" minimumFontSize="15" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BHu-m1-KKH" userLabel="Message display">
+                                <rect key="frame" x="10" y="320" width="355" height="30"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" staticText="YES" adjustable="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="sTr-9r-D3N">
+                                <rect key="frame" x="10" y="154" width="355" height="30"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your Name" textAlignment="center" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="D3I-m2-Wlc" userLabel="Your Name">
-                                        <rect key="frame" x="0.0" y="0.0" width="167.5" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                         <connections>
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="qFW-SM-RtB"/>
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="His/Her Name" textAlignment="center" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="60g-cw-HE4" userLabel="His/Her Name">
-                                        <rect key="frame" x="207.5" y="0.0" width="167.5" height="30"/>
+                                        <rect key="frame" x="195" y="0.0" width="160" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                         <connections>
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="NOC-Oc-8Sf"/>
                                         </connections>
                                     </textField>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="26e-XQ-WTe">
-                                <rect key="frame" x="107" y="238" width="161" height="33"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="17"/>
-                                <state key="normal" title="Calculate Your Love"/>
-                                <connections>
-                                    <action selector="loveCalculatorButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QGR-tv-gmO"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="none" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BHu-m1-KKH" userLabel="Message display">
-                                <rect key="frame" x="16" y="326" width="343" height="30"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" staticText="YES" adjustable="YES"/>
-                                </accessibility>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.99215686274509807" green="0.47450980392156861" blue="0.6588235294117647" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.99215686274509807" green="0.5" blue="0.6588235294117647" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="26e-XQ-WTe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ANp-MP-n7F"/>
-                            <constraint firstItem="BHu-m1-KKH" firstAttribute="top" secondItem="26e-XQ-WTe" secondAttribute="bottom" constant="55" id="EdM-7b-H9z"/>
-                            <constraint firstItem="yPm-QJ-oOQ" firstAttribute="top" secondItem="gT0-nm-Pbk" secondAttribute="bottom" constant="54" id="Gpf-bR-fwi"/>
-                            <constraint firstItem="yPm-QJ-oOQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="WY1-2h-i7c"/>
-                            <constraint firstItem="yPm-QJ-oOQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ckp-f6-2Bx"/>
-                            <constraint firstItem="gT0-nm-Pbk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="e5O-rM-cSc"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BHu-m1-KKH" secondAttribute="trailing" constant="16" id="k7W-L6-Eqg"/>
-                            <constraint firstItem="BHu-m1-KKH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="riS-Me-lPk"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yPm-QJ-oOQ" secondAttribute="trailing" id="shR-Ln-wwm"/>
-                            <constraint firstItem="26e-XQ-WTe" firstAttribute="top" secondItem="yPm-QJ-oOQ" secondAttribute="bottom" constant="60" id="udc-Ff-WYV"/>
-                            <constraint firstItem="gT0-nm-Pbk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="wLc-8J-beD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BHu-m1-KKH" secondAttribute="trailing" constant="10" id="2pu-dw-dll"/>
+                            <constraint firstItem="gT0-nm-Pbk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="54" id="4tC-UV-JrB"/>
+                            <constraint firstItem="BHu-m1-KKH" firstAttribute="top" secondItem="26e-XQ-WTe" secondAttribute="bottom" constant="50" id="51y-b0-Gib"/>
+                            <constraint firstItem="BHu-m1-KKH" firstAttribute="top" secondItem="26e-XQ-WTe" secondAttribute="bottom" constant="50" id="Btn-Sg-rgf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sTr-9r-D3N" secondAttribute="trailing" constant="10" id="Hki-gy-kDl"/>
+                            <constraint firstItem="26e-XQ-WTe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="I04-mb-TpJ"/>
+                            <constraint firstItem="gT0-nm-Pbk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="R5a-4s-QQg"/>
+                            <constraint firstItem="sTr-9r-D3N" firstAttribute="top" secondItem="gT0-nm-Pbk" secondAttribute="bottom" constant="40" id="TCa-yR-ZgI"/>
+                            <constraint firstItem="jvT-hJ-Uax" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="WVF-Bx-tAd"/>
+                            <constraint firstItem="26e-XQ-WTe" firstAttribute="top" secondItem="sTr-9r-D3N" secondAttribute="bottom" constant="50" id="YhH-DL-9hO"/>
+                            <constraint firstItem="sTr-9r-D3N" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="Z6h-Rg-zjm"/>
+                            <constraint firstItem="sTr-9r-D3N" firstAttribute="top" secondItem="gT0-nm-Pbk" secondAttribute="bottom" constant="40" id="cm7-2A-5FK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jvT-hJ-Uax" secondAttribute="bottom" constant="90" id="eaQ-u5-f1A"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jvT-hJ-Uax" secondAttribute="trailing" constant="10" id="kxf-ju-4nQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gT0-nm-Pbk" secondAttribute="trailing" constant="54" id="wMJ-9Q-ncU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="26e-XQ-WTe" secondAttribute="trailing" constant="10" id="wyp-HX-uhl"/>
+                            <constraint firstItem="BHu-m1-KKH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="yuq-61-cTG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="displayLabel" destination="BHu-m1-KKH" id="Pij-XB-aJt"/>
+                        <outlet property="isThisLove" destination="26e-XQ-WTe" id="k0D-As-AL9"/>
+                        <outlet property="reset" destination="jvT-hJ-Uax" id="hF5-5h-dfB"/>
                         <outlet property="theirName" destination="60g-cw-HE4" id="EOS-Ve-v2v"/>
                         <outlet property="yourName" destination="D3I-m2-Wlc" id="PdF-MP-U3N"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-600.79999999999995" y="-20.239880059970016"/>
+            <point key="canvasLocation" x="-1038" y="-116"/>
         </scene>
     </scenes>
 </document>
