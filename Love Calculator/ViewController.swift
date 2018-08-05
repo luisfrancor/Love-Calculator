@@ -46,7 +46,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    @IBAction func resetPressed(_ sender: UIButton) {
+    @IBAction func resetTapped(_ sender: UIButton) {
         yourName.text = ""
         theirName.text = ""
         isThisLove.isEnabled = true
@@ -72,6 +72,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    
+    // Keyboard show and shide methods
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
